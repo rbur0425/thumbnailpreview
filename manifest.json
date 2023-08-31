@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Thumbnail Preview",
+  "version": "1.0",
+  "description": "Ever wondered how your YouTube video thumbnail, title, and description would look like in the YouTube search results? Want to make sure your thumbnail pops and stands out from the crowd? Say hello to **YouTube Thumbnail Previewer**, the Chrome extension that lets you preview and compare your YouTube video's thumbnail, title, and description right in the search results. It's like having a mirror in the YouTube universe!",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/results?search_query=*"],
+      "js": ["content.js"]
+    }
+  ]
+}

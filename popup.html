@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thumbnail Preview</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+    <style>
+      body {
+        margin: 16px;
+        min-width: 400px;
+        min-height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <main style="padding: 0 0">
+      <h2 style="text-align: center">Thumbnail Preview</h2>
+      <p style="text-align: center; color: red" id="error"></p>
+      <form id="form">
+        <label for="thumbnail-input">Thumbnail:</label>
+        <input
+          type="file"
+          id="thumbnail-input"
+          accept=".jpg, .jpeg, .png"
+          required
+        />
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" maxlength="225" required />
+        <label for="name-input">Name:</label>
+        <input type="text" id="name-input" maxlength="225" required />
+        <label for="description-input">Description:</label>
+        <input type="text" id="description-input" maxlength="225" required />
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button type="submit" id="submit-button">Submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
