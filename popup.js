@@ -46,7 +46,6 @@ function handleSubmit(event) {
       if(!response)
       {
         document.getElementById("error").textContent = "Please go to the Youtube Search Results Page https://www.youtube.com/results?search_query=";
-        console.error(chrome.runtime.lastError.message);
         return;
       }
     });

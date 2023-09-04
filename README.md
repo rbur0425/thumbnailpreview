@@ -1,4 +1,4 @@
-# 🌟 YouTube Thumbnail Previewer - See Yourself Shine! 🌟
+# 🌟 Thumbnail Preview - See Yourself Shine! 🌟
 
 ![Thumbnail Previewer Logo](./assets/logo.png)
 
@@ -6,7 +6,7 @@
 
 ## 🎬 Elevator Pitch
 
-Ever wondered how your YouTube video thumbnail, title, and description would look like in the YouTube search results? Want to make sure your thumbnail pops and stands out from the crowd? Say hello to **YouTube Thumbnail Previewer**, the Chrome extension that lets you preview and compare your YouTube video's thumbnail, title, and description right in the search results. It's like having a mirror in the YouTube universe!
+Ever wondered how your YouTube video thumbnail, title, and description would look like in the YouTube search results? Want to make sure your thumbnail pops and stands out from the crowd? Say hello to **Thumbnail Preview**, the Chrome extension that lets you preview and compare your YouTube video's thumbnail, title, and description right in the search results. It's like having a mirror in the YouTube universe!
 
 ---
 
@@ -81,7 +81,7 @@ This project is licensed under the GNU Affero General Public License v3.0 - see 
 
 ## 🎉 Final Words
 
-Ready to make your YouTube thumbnails the star of the show? Install **YouTube Thumbnail Previewer** now and let your creativity shine! 🌟
+Ready to make your YouTube thumbnails the star of the show? Install **Thumbnail Previewer** now and let your creativity shine! 🌟
 
 ---
 

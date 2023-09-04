@@ -1,7 +1,8 @@
 // Function to insert user's information into the YouTube search results page
 function insertUserInfo() {
+  // console.log(window.location.href);
   // Check if the URL contains "https://www.youtube.com/results?search_query="
-  if (!window.location.href.includes("https://www.youtube.com/results?search_query=")) {
+  if (!window.location.href.includes("https://www.youtube.com/results?search_query")) {
     alert("Please go to the Youtube Search Results Page");
     return;
   }
