@@ -20,12 +20,6 @@ Ever wondered how your YouTube video thumbnail, title, and description would loo
 
 ---
 
-## 📺 Demo
-
-![Demo GIF](./assets/demo.gif)
-
----
-
 ## 🛠️ Installation
 
 1. **Download the Extension**: Click [here](#) to download the extension from the Chrome Web Store. (coming soon)
