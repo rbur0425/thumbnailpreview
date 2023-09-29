@@ -1,5 +1,5 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if (changeInfo.status === 'complete' && tab.url.includes("youtube.com/results") ) {
+    if (changeInfo.status === 'complete' && tab.url.includes("youtube.com") ) {
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
             files: ['content.js']

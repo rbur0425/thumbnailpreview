@@ -2,8 +2,9 @@
 function insertUserInfo() {
   // console.log(window.location.href);
   // Check if the URL contains "https://www.youtube.com/results?search_query="
-  if (!window.location.href.includes("https://www.youtube.com/results?search_query")) {
-    alert("Please go to the Youtube Search Results Page");
+  if (!window.location.href.includes("youtube.com")) {
+    alert("Please go to the Youtube Search Results Page or the Youtube Home Page");
+    console.log(window.location.href);
     return;
   }
 
@@ -14,26 +15,58 @@ function insertUserInfo() {
     const userName = result.userInfo.userName;
     const userDescription = result.userInfo.userDescription;
 
-    // Find the list of results
-    const list = document.getElementsByTagName("ytd-video-renderer");
+    console.log("got info from storage");
+    console.log("url" + window.location.href);
 
-    // If the list is not found or it has less than 3 items, return
-    if (!list || list.length < 3) {
-      return;
+    if(window.location.href.includes('results?search_query'))
+    {
+      // Find the list of results
+      const list = document.getElementsByTagName("ytd-video-renderer");
+
+      // If the list is not found or it has less than 3 items, return
+      if (!list || list.length < 3) {
+        return;
+      }
+
+      // Get the third component in the list
+      const thirdComponent = list[2];
+
+      // Replace the thumbnail, title, and name with the user's information
+      thirdComponent.querySelector("#thumbnail > yt-image > img").src = userThumbnail;
+      thirdComponent.querySelector("#video-title > yt-formatted-string").textContent = userTitle;
+      thirdComponent.querySelector("#video-title > yt-formatted-string").ariaLabel = userTitle;
+      thirdComponent.querySelector("#channel-info > #channel-name > #container > #text-container > #text > a").textContent = userName;
+      console.log(thirdComponent);
+      ytElement = thirdComponent.querySelector("div > div > div:nth-of-type(3) > yt-formatted-string");
+      console.log(ytElement)
+      replaceYtFormattedString(ytElement, userDescription);
     }
 
-    // Get the third component in the list
-    const thirdComponent = list[2];
+    if (window.location.href === 'https://www.youtube.com/')
+    {
+      // Find the list of results
+      const list = document.getElementsByTagName("ytd-rich-item-renderer");
+      console.log(list);
 
-    // Replace the thumbnail, title, and name with the user's information
-    thirdComponent.querySelector("#thumbnail > yt-image > img").src = userThumbnail;
-    thirdComponent.querySelector("#video-title > yt-formatted-string").textContent = userTitle;
-    thirdComponent.querySelector("#video-title > yt-formatted-string").ariaLabel = userTitle;
-    thirdComponent.querySelector("#channel-info > #channel-name > #container > #text-container > #text > a").textContent = userName;
-    console.log(thirdComponent);
-    ytElement = thirdComponent.querySelector("div > div > div:nth-of-type(3) > yt-formatted-string");
-    console.log(ytElement)
-    replaceYtFormattedString(ytElement, userDescription);
+      // If the list is not found or it has less than 3 items, return
+      if (!list || list.length < 3) {
+        return;
+      }
+
+      // Get the third component in the list
+      const thirdComponent = list[2];
+
+      // Replace the thumbnail, title, and name with the user's information
+      thirdComponent.querySelector("#thumbnail > yt-image > img").src = userThumbnail;
+      thirdComponent.querySelector("yt-formatted-string#video-title").textContent = userTitle;
+      thirdComponent.querySelector("yt-formatted-string#video-title").ariaLabel = userTitle;
+      thirdComponent.querySelector("yt-formatted-string#text").textContent = userName;
+      console.log(thirdComponent);
+      ytElement = thirdComponent.querySelector("div > div > div:nth-of-type(3) > yt-formatted-string");
+      console.log(ytElement)
+      replaceYtFormattedString(ytElement, userDescription);
+    }
+    
     });
   };
 
@@ -61,6 +94,7 @@ function replaceYtFormattedString(ytElement, newText) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.action === "insertUserInfo") {
+      console.log("received message");
       insertUserInfo();
       sendResponse({status: "done"});
     }

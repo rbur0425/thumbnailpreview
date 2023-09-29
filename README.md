@@ -30,10 +30,10 @@ Ever wondered how your YouTube video thumbnail, title, and description would loo
 
 ## 🎮 How to Use
 
-1. **Click the Icon**: Click on the Thumbnail Previewer icon in your Chrome toolbar.
-2. **Fill the Form**: Upload your thumbnail and fill in your title and description.
-3. **Submit**: Click the "Submit" button.
-4. **Go to YouTube**: Search for something on YouTube and see your video previewed in the search results.
+1. **Go to YouTube**: Use it directly on the YouTube homepage or search for something on YouTube.
+2. **Click the Icon**: Click on the Thumbnail Previewer icon in your Chrome toolbar.
+3. **Fill the Form**: Upload your thumbnail and fill in your title and description.
+4. **Submit**: Click the "Submit" button.
 5. **Compare**: Scroll through the list and see how your video stacks up against the competition.
 
 ---

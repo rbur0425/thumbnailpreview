@@ -42,12 +42,14 @@ function handleSubmit(event) {
   reader.readAsDataURL(file);
 
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    console.log("sending message");
     chrome.tabs.sendMessage(tabs[0].id, {action: "insertUserInfo"}, function(response) {
       if(!response)
       {
         document.getElementById("error").textContent = "Please go to the Youtube Search Results Page https://www.youtube.com/results?search_query=";
         return;
       }
+      console.log(response);
     });
   });
 }
